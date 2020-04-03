@@ -1,0 +1,11 @@
+<div class="dots">
+  <input type="hidden" class="dot" name="attr_{{attr}}" value="1" />
+  {{#repeat count start=1}}
+    <button type="action" class="dot{{> gt @index}}" name="act_{{../attr}}_{{@index}}"></button>
+  {{/repeat}}
+  {{!-- <button type="action" class="dot" name="act_{{attr}}_1"></button>
+  <button type="action" class="dot gt-1" name="act_{{attr}}_2"></button>
+  <button type="action" class="dot gt-1 gt-2" name="act_{{attr}}_3"></button>
+  <button type="action" class="dot gt-1 gt-2 gt-3" name="act_{{attr}}_4"></button>
+  <button type="action" class="dot gt-1 gt-2 gt-3 gt-4" name="act_{{attr}}_5"></button> --}}
+</div>

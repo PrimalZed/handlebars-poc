@@ -1,0 +1,16 @@
+{
+  "primaryAttributeCategories": [
+    {
+      "name": "mental",
+      "attributes": ["intelligence", "wits", "resolve"]
+    },
+    {
+      "name": "physical",
+      "attributes": ["strength", "dexterity", "stamina"]
+    },
+    {
+      "name": "social",
+      "attributes": ["presence", "manipulation", "composure"]
+    }
+  ]
+}

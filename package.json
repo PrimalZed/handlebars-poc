@@ -1,0 +1,21 @@
+{
+  "name": "simple-handlebars-sheet",
+  "version": "1.0.0",
+  "description": "Proof of Concept generating html and css for a Roll20 character sheet from Handlebars templates and scss",
+  "scripts": {
+    "generate": "hbs-rev --main src/index.handlebars --partials src/partials --data src/data.json --output simple-sheet.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PrimalZed/handlebars-poc.git"
+  },
+  "author": "Primal Zed",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PrimalZed/handlebars-poc/issues"
+  },
+  "homepage": "https://github.com/PrimalZed/handlebars-poc#readme",
+  "dependencies": {
+    "handlebars-rev": "0.0.1"
+  }
+}
