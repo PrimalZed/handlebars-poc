@@ -1,0 +1,12 @@
+<div class="dots">
+  <input type="hidden" class="dot" name="attr_{{attr}}" value="1" />
+  {{! repeats the block the specified number of times. The `@index` counter starts at 1. }}
+  {{! https://github.com/helpers/handlebars-helper-repeat#usage-examples }}
+  {{#repeat count start=1}}
+    {{! Calls the partial with name `gt.handlebars` or `gt.hbs`. Within the partial, the data context will be the value of `@index`.}}
+    {{! See file partials/gt.handlebars}}
+    {{! https://handlebarsjs.com/guide/partials.html }}
+    {{! `@index` is the counter for the `repeat` block.}}
+    <button type="action" class="dot{{> gt @index}}" name="act_{{attr}}_{{@index}}"></button>
+  {{/repeat}}
+</div>

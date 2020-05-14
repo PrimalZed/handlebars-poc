@@ -1,0 +1,35 @@
+<div class="columns">
+  {{! Adds the block for each item in the `primaryAttributeCategories` array. The current item is referred to as `primaryAttributeCategory`.}}
+  {{! https://handlebarsjs.com/guide/builtin-helpers.html#each }}
+  {{#each primaryAttributeCategories as |primaryAttributeCategory| }}
+    <div class="primary-attribute-category">
+      {{! Adds the block for each item in the `primaryAttributeCategory.attributes` array. The current item is referred to as `primaryAttribute`.}}
+      {{! https://handlebarsjs.com/guide/builtin-helpers.html#each }}
+      {{#each primaryAttributeCategory.attributes as |primaryAttribute| }}
+        <div class="primary-attribute">
+          <div class="subheader">
+            <input type="hidden" class="flag" name="attr_{{primaryAttribute}}_flag" value="0" />
+            {{! Changes the first letter of attribute to upper case.}}
+            {{! https://github.com/helpers/handlebars-helpers#capitalize }}
+            <button type="action" class="toggle" name="act_{{primaryAttribute}}" data-i18n="{{primaryAttribute}}">{{capitalize primaryAttribute}}</button>
+          </div>
+          {{! Calls the partial with name `dots.handlebars` or `dots.hbs`. Within the partial, data values `attr` and `count` will be available.}}
+          {{! See file partials/dots.handlebars}}
+          {{! https://handlebarsjs.com/guide/partials.html }}
+          {{> dots attr=primaryAttribute count=5}}
+        </div>
+        {{! Adds this block whenever `@last` is not true. `@last` is true for the last item of the `each` block, and false for all other items.}}
+        {{! https://handlebarsjs.com/guide/builtin-helpers.html#unless }}
+        {{#unless @last}}
+          <div class="horizontal-spacer"></div>
+        {{/unless}}
+      {{/each}}
+    </div>
+  {{/each}}
+</div>
+<script type="text/worker">
+  {{! Calls the partial with name `worker.js.handlebars` or `worker.js.hbs`.}}
+  {{! See file partials/worker.js.handlebars}}
+  {{! https://handlebarsjs.com/guide/partials.html }}
+  {{> workerJs}}
+</script>

@@ -1,0 +1,57 @@
+<div>
+  <div>
+    {{! repeats the block the 5 times. }}
+    {{! https://github.com/helpers/handlebars-helper-repeat#usage-examples }}
+    {{#repeat 5}}
+      <div>Simple repeat example</div>
+    {{/repeat}}
+  </div>
+  <div>
+    {{! Parses inline string into a JSON value, such as a number, string, object, or array.}}
+    {{! https://github.com/helpers/handlebars-helpers#JSONparse }}
+    {{! Adds the block for each item in the result of the JSONparse. The current item becomes the evaluation context. }}
+    {{! https://handlebarsjs.com/guide/builtin-helpers.html#each }}
+    {{! https://handlebarsjs.com/guide/#evaluation-context }}
+    {{#each (JSONparse '["first", "second"]')}}
+      <div>
+        <div>{{this}}</div>
+        <div>
+          {{! `@root` refers to the root object of the data json file.}}
+          {{! https://handlebarsjs.com/api-reference/data-variables.html#root }}
+          {{! Adds the block for each item in the `@root.gamelines` object. The current item becomes the evaluation context. }}
+          {{! https://handlebarsjs.com/guide/builtin-helpers.html#each }}
+          {{! https://handlebarsjs.com/guide/#evaluation-context }}
+          {{#each @root.gamelines}}
+            <div>{{name}}</div>
+          {{/each}}
+        </div>
+      </div>
+    {{/each}}
+  </div>
+  <div>
+    {{! Adds the block for each item in the `gamelines` object. The current key is referred to as `@key` and the current item is referred to as `gameline`.}}
+    {{! https://handlebarsjs.com/guide/builtin-helpers.html#each }}
+    {{#each gamelines as |gameline| }}
+      <button type="action" class="toggle active-{{@key}}" name="act_sheet_type_{{@key}}" title="{{capitalize @key}}" data-i18n="{{gameline.dataI18n}}">{{gameline.name}}</button>
+    {{/each}}
+  </div>
+  <div>
+    {{! Adds the block for each item in the `gamelines` object. The current key is referred to as `@key` and the current item is referred to as `gameline`.}}
+    {{! https://handlebarsjs.com/guide/builtin-helpers.html#each }}
+    {{#each gamelines as |gameline| }}
+      {{! Adds this block only if `gameline.imageFile` is truthy (i.e. has a value).}}
+      {{! https://handlebarsjs.com/guide/builtin-helpers.html#if }}
+      {{! See also: https://developer.mozilla.org/en-US/docs/Glossary/Truthy }}
+      {{! See also: https://developer.mozilla.org/en-US/docs/Glossary/Falsy }}
+      {{#if gameline.imageFile}}
+        <img class="{{@key}}" src="https://raw.githubusercontent.com/Roll20/roll20-character-sheets/master/Chronicles%20of%20Darkness/images/{{gameline.imageFile}}">
+      {{/if}}
+    {{/each}}
+  </div>
+</div>
+<script type="text/worker">
+  {{! Calls the partial with name `worker.js.handlebars` or `worker.js.hbs`.}}
+  {{! See file partials/worker.js.hbs}}
+  {{! https://handlebarsjs.com/guide/partials.html }}
+  {{> workerJs}}
+</script>

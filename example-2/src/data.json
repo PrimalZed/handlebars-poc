@@ -1,0 +1,61 @@
+{
+  "gamelines": {
+    "mortal": {
+      "name": "Chronicles of Darkness",
+      "dataI18n": "chronicles-of-darkness",
+      "imageFile": "chroniclesofdarkness.png"
+    },
+    "vampire": {
+      "name": "Vampire the Requiem",
+      "dataI18n": "vampire-the-requiem",
+      "imageFile": "vampire.png"
+    },
+    "werewolf": {
+      "name": "Werewolf the Forsaken",
+      "dataI18n": "werewolf-the-forsaken",
+      "imageFile": "werewolf.png"
+    },
+    "mage": {
+      "name": "Mage the Awakening",
+      "dataI18n": "mage-the-awakening",
+      "imageFile": "mage.png"
+    },
+    "promethean": {
+      "name": "Promethean the Created",
+      "dataI18n": "promethean-the-created",
+      "imageFile": "promethean.png"
+    },
+    "changeling": {
+      "name": "Changeling the Lost",
+      "dataI18n": "changeling-the-lost",
+      "imageFile": "changeling.png"
+    },
+    "hunter": {
+      "name": "Hunter the Vigil",
+      "dataI18n": "hunter-the-vigil",
+      "imageFile": "hunter.png"
+    },
+    "geist": {
+      "name": "Geist the Sin-Eaters",
+      "dataI18n": "geist-the-sin-eaters",
+      "imageFile": "geist.png"
+    },
+    "mummy": {
+      "name": "Mummy the Curse",
+      "dataI18n": "mummy-the-curse"
+    },
+    "demon": {
+      "name": "Demon the Descent",
+      "dataI18n": "demon-the-descent",
+      "imageFile": "DtD_logo.png"
+    },
+    "beast": {
+      "name": "Beast the Primordial",
+      "dataI18n": "beast-the-primordial"
+    },
+    "deviant": {
+      "name": "Deviant the Renegades",
+      "dataI18n": "deviant-the-renegades"
+    }
+  }
+}

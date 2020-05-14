@@ -1,0 +1,12 @@
+<div class="stats">
+  {{! Adds the block for each item in the `attributes` array. The current item is referred to as `attribute`.}}
+  {{! https://handlebarsjs.com/guide/builtin-helpers.html#each }}
+  {{#each attributes as |attribute| }}
+    <div>
+      {{! Changes the first letter of attribute to upper case.}}
+      {{! https://github.com/helpers/handlebars-helpers#capitalize }}
+      <span class="stat-name" data-i18n="{{attribute}}-u">{{capitalize attribute}}</span>
+      <input class="stat-value" name="attr_{{attribute}}" value="0" />
+    </div>
+  {{/each}}
+</div>

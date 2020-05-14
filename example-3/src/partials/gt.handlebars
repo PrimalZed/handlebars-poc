@@ -1,0 +1,7 @@
+{{! `this` is the value of the current data context.}}
+{{! https://handlebarsjs.com/guide/#evaluation-context }}
+{{! `this` is expected to be a numerical value, as it is used in a mathematical operation.}}
+{{! subtracts 1 from `this`: `(this - 1)`}}
+{{! repeats the block the specified number of times. The `@index` counter starts at 1. }}
+{{! https://github.com/helpers/handlebars-helper-repeat#usage-examples }}
+{{#repeat (subtract this 1) start=1}} gt-{{@index}}{{/repeat}}
